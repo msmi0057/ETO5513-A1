@@ -1,4 +1,3 @@
-# Activity1
-Module 2 activity
-
-This repository is an example about how to integrate GitHub with RStudio Cloud
+# Assessment 1
+Assessment 1
+This repository provides the analysis of who American spend their time with.
