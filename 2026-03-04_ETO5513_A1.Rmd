@@ -199,6 +199,36 @@ ten_year_df
 
 ```
 
+We want to see as people spend more time alone how do they spend more time with a partner or with friends using line graphs.
+
+```{r Additional graph}
+
+visual_df2 <- df %>%
+  pivot_longer(
+  cols = c("Alone", "With.partner", "With.friends"),
+  names_to = "With_who",
+  values_to =  "Time_spent"
+  )
+
+visual_df2 <- subset(visual_df2, Sex == "All people")
+  
+
+
+
+Line_graph <- ggplot(visual_df2, aes(
+  x = Age,
+  y = Time_spent,
+  group = With_who,
+  color = With_who)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(15, 80, by = 5))
+  
+Line_graph
+
+
+```
+
+
 ### Conclusions
 
 Do Americans who spent more time with a partner spend less time alone? The data indicated that time spent with a partner did not detract from time being alone. From the mean and summary table we could see that men on average spent more time by themselves and with a partner compared to women. Further analysis of the other variables may show that women on average spend more time with friends, coworkers or family compared to men.
