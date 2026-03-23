@@ -37,7 +37,7 @@ Did Americans who said they spent more time with partners also say that they spe
 
 ```{r read csv}
 
-csv = read.csv("relationship_data/time-spent-with-relationships-by-age-us.csv")
+csv = read.csv("Data/time-spent-with-relationships-by-age-us.csv")
 # head(csv, n = 10)
 
 df <- csv %>% select(-With.children, -With.family, -With.coworkers) %>%
@@ -173,7 +173,7 @@ In the following table we grouped the data into age groups by 10 year increments
 
 
 
-```{r Additional table}
+```{r Additional table, message = FALSE, warning = FALSE}
 
 # used gemini response of how to group by age
 ten_year_df <- df %>%
@@ -193,15 +193,23 @@ ten_year_df <- df %>%
   )
 
 ten_year_df <- subset(ten_year_df, Sex == "All people")
+ten_year_df <- subset(ten_year_df, select = -Sex)
 
-ten_year_df
+kable(ten_year_df, col.names = c(
+  "Age group",
+  "Alone mean",
+  "With partner mean",
+  "With friends meanr"),
+  format = "pipe", padding = 15,
+  caption = "Mean of time spent alone, with parnter and with friends by age group"
+  )
 
 
 ```
 
 We want to see as people spend more time alone how do they spend more time with a partner or with friends using line graphs.
 
-```{r Additional graph}
+```{r Additional graph, fig.width=8, fig.height= 5, warning = FALSE, fig.align='center'}
 
 visual_df2 <- df %>%
   pivot_longer(
@@ -236,7 +244,7 @@ Line_graph
 
 Do Americans who spent more time with a partner spend less time alone? The data indicated that time spent with a partner did not detract from time being alone. From the mean and summary table we could see that men on average spent more time by themselves and with a partner compared to women. Further analysis of the other variables may show that women on average spend more time with friends, coworkers or family compared to men.
 
-We further explored the relationship of how much time people spend alone compared to how much time they spend with their partner, by creating a scatterplot. The scatterplot showed that there was no inverse relationship and that time spent with a partner remained consistent for women even as they spent more time alone. Seeing at which ages behaviours occurred, we saw that women begin to spend increasingly more time with their partners throughout their late teens to mid twenties, and then continue to spend a similar amount of time with their partners varying between just under 3 hours to just over 4 hours until they're 80.
+We further explored the relationship of how much time people spend alone compared to how much time they spend with their partner, by creating a scatterplot. The scatterplot showed that there was no inverse relationship and that time spent with a partner remained consistent for women even as they spent more time alone. Seeing at which ages behaviours occurred, we saw that women begin to spend increasingly more time with their partners throughout their late teens to mid twenties, and then continue to spend a similar amount of time with their partners.
 
 ### References
 https://ourworldindata.org/grapher/time-spent-with-relationships-by-age-us
