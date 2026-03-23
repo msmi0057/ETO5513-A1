@@ -1,2 +1,3 @@
-# ETO5513-A1
-Assessment 1 - Who do Americans spend time with?
+# Assessment 1
+Assessment 1
+This repository provides the analysis of who American spend their time with.
