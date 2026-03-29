@@ -4,7 +4,6 @@ author: "Marlies Smit"
 date: "2026-02-17"
 output: 
   html_document:
-    code_folding: hide
 ---
 
 
