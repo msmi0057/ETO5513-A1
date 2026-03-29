@@ -50,7 +50,7 @@ df <- csv %>% select(-With.children, -With.family, -With.coworkers) %>%
 
 ### Data set introduction
 
-Researchers surveyed Americans on who they spend time with in measured by hours per day. Survey responses were fell into the categories of alone, with friends, with partner, with family and with coworkers (the last two categories have been removed from the data set). The data set located by the file path "relationship_data/time-spent-with-relationships-by-age-us.csv" included information on the respondents age, sex and the amount of time they spent per day for each category. The data set has been aggregated to show the average response of respondents at every age between 15 and 80 for men, women and the average of all.
+Researchers surveyed Americans on who they spend time with measured by hours per day. Survey responses were fell into the categories of alone, with friends, with partner, with family and with coworkers (the last two categories have been removed from the data set). The data set located by the file path "relationship_data/time-spent-with-relationships-by-age-us.csv" included information on the respondents age, sex and the amount of time they spent per day for each category. The data set has been aggregated to show the average response of respondents at every age between 15 and 80 for men, women and the average of all.
 
 
 ```{r}
@@ -253,6 +253,6 @@ Line_graph
 Do Americans who spent more time with a partner spend less time alone? The data indicated that time spent with a partner did not detract from time being alone. However with further analysis we could see that their was an inverse relationship between time spent with friends and time spent with partner. Whereas time spent alone steadily increased from age 35.
 
 
-From the mean and summary table we could see that men on average spent more time by themselves and with a partner compared to women.We further explored the relationship of how much time people spent alone compared to how much time they spent with their partner, by creating a scatterplot. The scatterplot showed that there was no inverse relationship and that time spent with a partner remained consistent for women even as they spent more time alone. 
+From the mean and summary table we could see that men on average spent more time by themselves and with a partner compared to women.We further explored the relationship of how much time people spent alone compared to how much time they spent with their partner by creating a scatterplot. The scatterplot showed that there was no inverse relationship and that time spent with a partner remained consistent for women even as they spent more time alone. 
 
 The "Mean of time spent by age group" table and line graph indicated that age had a more significant relationship on how much time respondents spent alone. 
